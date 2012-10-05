@@ -83,13 +83,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _products.count;
+    return _products.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
+    if (indexPath.row >= _products.count) {
+        cell.textLabel.text = @"Random Face";
+        cell.detailTextLabel.text = @"Unlimited";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
+    }
+    
     SKProduct * product = (SKProduct *) _products[indexPath.row];
     cell.textLabel.text = product.localizedTitle;
     [_priceFormatter setLocale:product.priceLocale];
@@ -119,6 +126,27 @@
     NSLog(@"Buying %@...", product.productIdentifier);
     [[RageIAPHelper sharedInstance] buyProduct:product];
 
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (indexPath.row < _products.count) {
+        SKProduct * product = (SKProduct *) _products[indexPath.row];
+        NSSet * consumableProductIdentifiers = [NSSet setWithObjects:
+                                                @"com.razeware.inapprage.drummerrage",
+                                                @"com.razeware.inapprage.itunesconnectrage",
+                                                @"com.razeware.inapprage.nightlyrage",
+                                                @"com.razeware.inapprage.studylikeaboss",
+                                                @"com.razeware.inapprage.updogsadness",
+                                                nil];
+        if ([consumableProductIdentifiers containsObject:product.productIdentifier]) {
+            [self performSegueWithIdentifier:@"showDetail" sender:nil];
+            return;
+        }
+    }
+
+    // Default case
+    [self performSegueWithIdentifier:@"randomFace" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

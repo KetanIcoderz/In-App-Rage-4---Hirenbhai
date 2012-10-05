@@ -18,6 +18,11 @@
 		35D0087C161F373200B604E4 /* iphonerage.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D00876161F373200B604E4 /* iphonerage.png */; };
 		35D0087D161F373200B604E4 /* study.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35D00877161F373200B604E4 /* study.jpg */; };
 		35D0087E161F373200B604E4 /* updog.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D00878161F373200B604E4 /* updog.png */; };
+		35D00883161F3BC300B604E4 /* random1.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D0087F161F3BC300B604E4 /* random1.png */; };
+		35D00884161F3BC300B604E4 /* random2.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D00880161F3BC300B604E4 /* random2.png */; };
+		35D00885161F3BC300B604E4 /* random3.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D00881161F3BC300B604E4 /* random3.png */; };
+		35D00886161F3BC300B604E4 /* random4.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D00882161F3BC300B604E4 /* random4.png */; };
+		35D00889161F3C7800B604E4 /* RandomFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D00888161F3C7800B604E4 /* RandomFaceViewController.m */; };
 		35E66ABF15F7EAE200F253ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E66ABE15F7EAE200F253ED /* UIKit.framework */; };
 		35E66AC115F7EAE200F253ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E66AC015F7EAE200F253ED /* Foundation.framework */; };
 		35E66AC315F7EAE200F253ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E66AC215F7EAE200F253ED /* CoreGraphics.framework */; };
@@ -44,6 +49,12 @@
 		35D00876161F373200B604E4 /* iphonerage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphonerage.png; sourceTree = "<group>"; };
 		35D00877161F373200B604E4 /* study.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = study.jpg; sourceTree = "<group>"; };
 		35D00878161F373200B604E4 /* updog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = updog.png; sourceTree = "<group>"; };
+		35D0087F161F3BC300B604E4 /* random1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = random1.png; sourceTree = "<group>"; };
+		35D00880161F3BC300B604E4 /* random2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = random2.png; sourceTree = "<group>"; };
+		35D00881161F3BC300B604E4 /* random3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = random3.png; sourceTree = "<group>"; };
+		35D00882161F3BC300B604E4 /* random4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = random4.png; sourceTree = "<group>"; };
+		35D00887161F3C7800B604E4 /* RandomFaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomFaceViewController.h; sourceTree = "<group>"; };
+		35D00888161F3C7800B604E4 /* RandomFaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomFaceViewController.m; sourceTree = "<group>"; };
 		35E66ABA15F7EAE200F253ED /* In App Rage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "In App Rage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E66ABE15F7EAE200F253ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		35E66AC015F7EAE200F253ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +130,8 @@
 				35E66AD415F7EAE200F253ED /* MasterViewController.m */,
 				35E66AD615F7EAE200F253ED /* DetailViewController.h */,
 				35E66AD715F7EAE200F253ED /* DetailViewController.m */,
+				35D00887161F3C7800B604E4 /* RandomFaceViewController.h */,
+				35D00888161F3C7800B604E4 /* RandomFaceViewController.m */,
 				35E66ADE15F7EB2F00F253ED /* IAPHelper.h */,
 				35E66ADF15F7EB2F00F253ED /* IAPHelper.m */,
 				35E66AE315F7F24500F253ED /* RageIAPHelper.h */,
@@ -131,6 +144,10 @@
 		35E66AC515F7EAE200F253ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35D0087F161F3BC300B604E4 /* random1.png */,
+				35D00880161F3BC300B604E4 /* random2.png */,
+				35D00881161F3BC300B604E4 /* random3.png */,
+				35D00882161F3BC300B604E4 /* random4.png */,
 				35D00873161F373200B604E4 /* 01_night.png */,
 				35D00874161F373200B604E4 /* attribution.txt */,
 				35D00875161F373200B604E4 /* drummer.png */,
@@ -214,6 +231,10 @@
 				35D0087C161F373200B604E4 /* iphonerage.png in Resources */,
 				35D0087D161F373200B604E4 /* study.jpg in Resources */,
 				35D0087E161F373200B604E4 /* updog.png in Resources */,
+				35D00883161F3BC300B604E4 /* random1.png in Resources */,
+				35D00884161F3BC300B604E4 /* random2.png in Resources */,
+				35D00885161F3BC300B604E4 /* random3.png in Resources */,
+				35D00886161F3BC300B604E4 /* random4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +251,7 @@
 				35E66AD815F7EAE200F253ED /* DetailViewController.m in Sources */,
 				35E66AE015F7EB2F00F253ED /* IAPHelper.m in Sources */,
 				35E66AE515F7F24500F253ED /* RageIAPHelper.m in Sources */,
+				35D00889161F3C7800B604E4 /* RandomFaceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
