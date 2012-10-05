@@ -33,7 +33,13 @@
     _priceFormatter = [[NSNumberFormatter alloc] init];
     [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+ 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Restore" style:UIBarButtonItemStyleBordered target:self action:@selector(restoreTapped:)];
     
+}
+
+- (void)restoreTapped:(id)sender {
+    [[RageIAPHelper sharedInstance] restoreCompletedTransactions];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -113,6 +119,29 @@
     NSLog(@"Buying %@...", product.productIdentifier);
     [[RageIAPHelper sharedInstance] buyProduct:product];
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
+        DetailViewController * detailViewController = (DetailViewController *) segue.destinationViewController;
+        SKProduct * product = (SKProduct *) _products[self.tableView.indexPathForSelectedRow.row];
+        if ([[RageIAPHelper sharedInstance] productPurchased:product.productIdentifier]) {
+            if ([product.productIdentifier isEqualToString:@"com.razeware.inapprage.drummerrage"]) {
+                detailViewController.image = [UIImage imageNamed:@"drummer.png"];
+            } else if ([product.productIdentifier isEqualToString:@"com.razeware.inapprage.itunesconnectrage"]) {
+                detailViewController.image = [UIImage imageNamed:@"iphonerage.png"];
+            } else if ([product.productIdentifier isEqualToString:@"com.razeware.inapprage.nightlyrage"]) {
+                detailViewController.image = [UIImage imageNamed:@"01_night.png"];
+            } else if ([product.productIdentifier isEqualToString:@"com.razeware.inapprage.studylikeaboss"]) {
+                detailViewController.image = [UIImage imageNamed:@"study.jpg"];
+            } else if ([product.productIdentifier isEqualToString:@"com.razeware.inapprage.updogsadness"]) {
+                detailViewController.image = [UIImage imageNamed:@"updog.png"];
+            }                 
+        } else {
+            detailViewController.image = nil;
+            detailViewController.message = @"Purchase to see comic!";
+        }
+    }
 }
 
 @end

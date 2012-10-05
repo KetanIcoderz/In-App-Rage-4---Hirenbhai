@@ -10,7 +10,7 @@
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (nonatomic, retain) UIImage * image;
+@property (nonatomic, retain) NSString * message;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
